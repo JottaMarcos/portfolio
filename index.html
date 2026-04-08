@@ -34,6 +34,43 @@
             overflow-x: hidden;
         }
         
+        /* Navigation Menu */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(30, 64, 175, 0.2);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-link:hover {
+            color: white;
+            background: rgba(30, 64, 175, 0.2);
+        }
+        
         /* Header/Hero Section */
         header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
@@ -136,52 +173,45 @@
             padding: 0 2rem;
         }
         
-        /* Stats Section */
-        .stats {
+        /* Introduction Section */
+        .intro {
             background: var(--dark-light);
-            padding: 3rem 2rem;
-            margin-top: -3rem;
-            position: relative;
-            z-index: 2;
+            padding: 4rem 2rem;
+            margin-top: 0;
         }
         
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
+        .intro-content {
+            max-width: 900px;
             margin: 0 auto;
-        }
-        
-        .stat-card {
             text-align: center;
-            padding: 1.5rem 0.8rem;
-            background: rgba(30, 64, 175, 0.1);
-            border-radius: 12px;
-            border: 1px solid rgba(30, 64, 175, 0.2);
-            transition: transform 0.3s ease, border-color 0.3s ease;
         }
         
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
+        .intro-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #3b82f6;
+            font-weight: 700;
         }
         
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.3rem;
+        .intro-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: white;
+            margin-bottom: 1.2rem;
         }
         
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .intro-highlight {
+            background: rgba(30, 64, 175, 0.15);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+        }
+        
+        .intro-highlight p {
+            margin: 0;
+            font-style: italic;
+            color: #e0e0e0;
         }
         
         /* Section Styles */
@@ -218,57 +248,70 @@
         
         /* About Section */
         #sobre {
-            background: var(--dark-light);
+            background: var(--dark);
         }
         
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
+            text-align: center;
         }
         
         .about-text h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
-            color: var(--primary);
+            color: #3b82f6;
+            font-weight: 700;
         }
         
         .about-text p {
             margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
+            color: white;
+            line-height: 1.9;
+            font-size: 1.05rem;
         }
         
         .about-highlights {
             list-style: none;
             margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .about-highlights li {
-            padding: 0.8rem 0;
+            padding: 0.8rem;
             padding-left: 2rem;
             position: relative;
-            color: var(--text);
+            color: white;
+            text-align: left;
+            background: rgba(30, 64, 175, 0.1);
+            border-radius: 8px;
         }
         
         .about-highlights li::before {
             content: '✓';
             position: absolute;
-            left: 0;
+            left: 0.8rem;
             color: var(--success);
             font-weight: bold;
             font-size: 1.2rem;
         }
         
         /* Skills Grid */
+        #habilidades {
+            background: var(--dark-light);
+            padding: 4rem 2rem;
+        }
+        
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
@@ -304,12 +347,12 @@
         
         /* Projects Section */
         #projetos {
-            background: var(--dark-light);
+            background: var(--dark);
         }
         
         .projects-grid {
             display: grid;
-            gap: 3rem;
+            gap: 4rem;
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -409,31 +452,38 @@
         }
         
         .tech-tag {
-            background: rgba(30, 64, 175, 0.2);
-            color: var(--primary);
-            padding: 0.35rem 0.9rem;
+            background: rgba(30, 64, 175, 0.3);
+            color: white;
+            padding: 0.4rem 1rem;
             border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid rgba(30, 64, 175, 0.5);
         }
         
         .project-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--primary);
+            color: white;
             text-decoration: none;
-            font-weight: 600;
-            transition: gap 0.3s ease;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: gap 0.3s ease, color 0.3s ease;
+            background: var(--primary);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
         }
         
         .project-link:hover {
             gap: 1rem;
+            background: var(--primary-dark);
         }
         
         /* Contact Section */
         #contato {
             text-align: center;
+            background: var(--dark-light);
         }
         
         .contact-info {
@@ -446,7 +496,7 @@
         
         .contact-item {
             padding: 1.5rem;
-            background: var(--dark-light);
+            background: var(--dark);
             border-radius: 12px;
             border: 1px solid rgba(30, 64, 175, 0.2);
             transition: all 0.3s ease;
@@ -465,13 +515,15 @@
         
         .contact-label {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 0.5rem;
         }
         
         .contact-value {
             color: var(--text);
             font-weight: 600;
+            font-size: 0.9rem;
+            word-break: break-word;
         }
         
         .contact-value a {
@@ -481,6 +533,48 @@
         
         .contact-value a:hover {
             color: var(--primary);
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .contact-btn {
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        
+        .btn-email {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-email:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .btn-linkedin {
+            background: #0077b5;
+            color: white;
+        }
+        
+        .btn-linkedin:hover {
+            background: #006399;
+            transform: translateY(-3px);
         }
         
         /* Footer */
@@ -516,8 +610,11 @@
             }
             
             .about-content {
+                text-align: center;
+            }
+            
+            .about-highlights {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
             
             .project-card {
@@ -528,12 +625,18 @@
                 min-height: 250px;
             }
             
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
             .section-title {
                 font-size: 2rem;
+            }
+            
+            .nav-container {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 0.4rem 1rem;
+                font-size: 0.85rem;
             }
         }
         
@@ -551,6 +654,16 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="nav-container">
+            <a href="#sobre" class="nav-link">Sobre Mim</a>
+            <a href="#habilidades" class="nav-link">Habilidades</a>
+            <a href="#projetos" class="nav-link">Projetos</a>
+            <a href="#contato" class="nav-link">Contato</a>
+        </div>
+    </nav>
+
     <!-- Header/Hero -->
     <header>
         <div class="hero-content">
@@ -574,24 +687,20 @@
         </div>
     </header>
 
-    <!-- Stats Section -->
-    <div class="stats">
-        <div class="stats-grid">
-            <div class="stat-card fade-in">
-                <div class="stat-number">4+</div>
-                <div class="stat-label">Projetos Concluídos</div>
-            </div>
-            <div class="stat-card fade-in">
-                <div class="stat-number">50K+</div>
-                <div class="stat-label">Registros Analisados</div>
-            </div>
-            <div class="stat-card fade-in">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Autodidata</div>
-            </div>
-            <div class="stat-card fade-in">
-                <div class="stat-number">RJ</div>
-                <div class="stat-label">Rio de Janeiro</div>
+    <!-- Introduction Section -->
+    <div class="intro">
+        <div class="intro-content fade-in">
+            <h2>Transformando Dados em Decisões Estratégicas</h2>
+            <p>
+                Sou analista de dados especializado em <strong>Business Intelligence</strong>, com foco em resolver problemas complexos de negócio através de análise financeira, operacional e comportamental. Minha abordagem vai além de dashboards bonitos — busco insights acionáveis que geram valor real.
+            </p>
+            <p>
+                Domino o <strong>pipeline completo de dados</strong>: desde a extração e modelagem em SQL/PostgreSQL, passando pela análise exploratória em Python, até a visualização estratégica em Power BI. Cada projeto é construído pensando na decisão que precisa ser tomada, não apenas nos números.
+            </p>
+            <div class="intro-highlight">
+                <p>
+                    💡 <strong>Meu diferencial:</strong> Experiência prática de negócio combinada com capacidade técnica autodidata. Entendo que dados sem contexto são apenas números — meu trabalho é transformá-los em estratégia.
+                </p>
             </div>
         </div>
     </div>
@@ -600,74 +709,80 @@
     <section id="sobre">
         <div class="container">
             <div class="section-header fade-in">
-                <div class="section-tag">// Minha História</div>
+                <div class="section-tag">// Minha Jornada</div>
                 <h2 class="section-title">Sobre Mim</h2>
             </div>
             
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <h3>De Refrigeração para Dados</h3>
+            <div class="about-content fade-in">
+                <div class="about-text">
+                    <h3>Da Manutenção de Equipamentos à Engenharia de Dados</h3>
                     <p>
-                        Minha jornada em dados começou de forma não convencional. Após anos trabalhando como técnico de refrigeração autônomo, percebi que os problemas mais interessantes não estavam nos equipamentos — estavam nos números.
+                        Minha trajetória profissional começou de forma não convencional. Após anos como técnico de refrigeração autônomo, descobri que minha verdadeira paixão estava em desvendar padrões ocultos e transformar incertezas em clareza através dos dados.
                     </p>
                     <p>
-                        Decidi fazer a transição para análise de dados de forma 100% autodidata. Usando apenas um PC e recursos gratuitos do YouTube, construí uma base sólida em SQL, Power BI, Python e Business Intelligence.
+                        Fiz a transição para análise de dados de forma 100% autodidata, construindo expertise sólida em SQL, Power BI, Python e Business Intelligence através de dedicação e projetos práticos. Essa experiência anterior me deu algo que muitos analistas não têm: <strong>entendimento profundo de operações de negócio</strong> e a capacidade de enxergar além dos números.
                     </p>
                     <p>
-                        Hoje, aplico essa experiência prática de negócio para transformar dados em insights acionáveis, sempre com foco no problema real — não só em dashboards bonitos.
+                        Hoje, aplico essa visão única para entregar soluções de BI end-to-end — desde a modelagem de bancos de dados relacionais até dashboards executivos que realmente influenciam decisões estratégicas. Não apenas apresento dados; conto histórias que transformam informação em ação.
                     </p>
                     
                     <ul class="about-highlights">
-                        <li>Transição de refrigeração → dados em 12 meses</li>
-                        <li>Formação 100% autodidata e prática</li>
-                        <li>Foco em resolver problemas reais de negócio</li>
-                        <li>Portfólio com projetos end-to-end completos</li>
+                        <li>Transição de refrigeração → BI em 12 meses</li>
+                        <li>Formação 100% autodidata e orientada a resultados</li>
+                        <li>Pipelines completos: SQL → Python → Power BI</li>
+                        <li>Foco em impacto real, não apenas visualizações</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag">// Stack Técnico</div>
+                <h2 class="section-title">Habilidades & Ferramentas</h2>
+                <p class="section-description">
+                    Domínio completo do ecossistema de Business Intelligence e Análise de Dados
+                </p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">🗄️</div>
+                    <div class="skill-name">SQL</div>
+                    <div class="skill-level">Avançado</div>
+                </div>
                 
-                <div class="fade-in">
-                    <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
-                        <div class="section-tag">// Stack Técnico</div>
-                        <h3 class="section-title" style="font-size: 1.8rem;">Habilidades & Ferramentas</h3>
-                    </div>
-                    
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <div class="skill-icon">🗄️</div>
-                            <div class="skill-name">SQL</div>
-                            <div class="skill-level">Avançado</div>
-                        </div>
-                        
-                        <div class="skill-card">
-                            <div class="skill-icon">📊</div>
-                            <div class="skill-name">Power BI</div>
-                            <div class="skill-level">Avançado</div>
-                        </div>
-                        
-                        <div class="skill-card">
-                            <div class="skill-icon">⚡</div>
-                            <div class="skill-name">DAX</div>
-                            <div class="skill-level">Avançado</div>
-                        </div>
-                        
-                        <div class="skill-card">
-                            <div class="skill-icon">🐍</div>
-                            <div class="skill-name">Python</div>
-                            <div class="skill-level">Intermediário</div>
-                        </div>
-                        
-                        <div class="skill-card">
-                            <div class="skill-icon">🐘</div>
-                            <div class="skill-name">PostgreSQL</div>
-                            <div class="skill-level">Intermediário</div>
-                        </div>
-                        
-                        <div class="skill-card">
-                            <div class="skill-icon">📈</div>
-                            <div class="skill-name">Excel</div>
-                            <div class="skill-level">Avançado</div>
-                        </div>
-                    </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">📊</div>
+                    <div class="skill-name">Power BI</div>
+                    <div class="skill-level">Avançado</div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">⚡</div>
+                    <div class="skill-name">DAX</div>
+                    <div class="skill-level">Avançado</div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">🐍</div>
+                    <div class="skill-name">Python</div>
+                    <div class="skill-level">Intermediário</div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">🐘</div>
+                    <div class="skill-name">PostgreSQL</div>
+                    <div class="skill-level">Intermediário</div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">📈</div>
+                    <div class="skill-name">Excel</div>
+                    <div class="skill-level">Avançado</div>
                 </div>
             </div>
         </div>
@@ -827,7 +942,7 @@
                 <h2 class="section-title">Entre em Contato</h2>
                 <p class="section-description">
                     Estou sempre aberto a novos desafios e oportunidades.<br>
-                    Se você procura um analista de dados dedicado, autodidata e com vontade de aprender, vamos conversar!
+                    Se você procura um analista de dados dedicado, autodidata e focado em resultados, vamos conversar!
                 </p>
             </div>
             
@@ -836,7 +951,7 @@
                     <div style="font-size: 1.8rem; margin-bottom: 0.8rem;">📧</div>
                     <div class="contact-label">Email</div>
                     <div class="contact-value">
-                        <a href="mailto:jmarcos.fbarros@gmail.com">jmarcos.fbarros@gmail.com</a>
+                        <a href="mailto:jmarcos.fbarros@gmail.com">jmarcos.fbarros<br>@gmail.com</a>
                     </div>
                 </div>
                 
@@ -849,25 +964,28 @@
                 </div>
                 
                 <div class="contact-item fade-in">
-                    <div style="font-size: 1.8rem; margin-bottom: 0.8rem;">💼</div>
-                    <div class="contact-label">LinkedIn</div>
-                    <div class="contact-value">
-                        <a href="https://www.linkedin.com/in/joão-marcos-analytics" target="_blank">joão-marcos-analytics</a>
-                    </div>
-                </div>
-                
-                <div class="contact-item fade-in">
                     <div style="font-size: 1.8rem; margin-bottom: 0.8rem;">💻</div>
                     <div class="contact-label">GitHub</div>
                     <div class="contact-value">
                         <a href="https://github.com/JottaMarcos" target="_blank">@JottaMarcos</a>
                     </div>
                 </div>
+                
+                <div class="contact-item fade-in">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.8rem;">📍</div>
+                    <div class="contact-label">Localização</div>
+                    <div class="contact-value">
+                        Rio de Janeiro, RJ
+                    </div>
+                </div>
             </div>
             
-            <div style="margin-top: 3rem;">
-                <a href="mailto:jmarcos.fbarros@gmail.com" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;">
+            <div class="contact-buttons">
+                <a href="mailto:jmarcos.fbarros@gmail.com" class="contact-btn btn-email">
                     📩 Enviar Email
+                </a>
+                <a href="https://www.linkedin.com/in/joão-marcos-analytics" target="_blank" class="contact-btn btn-linkedin">
+                    💼 LinkedIn
                 </a>
             </div>
         </div>
